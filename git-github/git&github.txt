@@ -1,4 +1,4 @@
-Git理解:
+﻿Git理解:
 Git一个开源的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
 Git相对SVN多了 本地仓库 ,支持分布式管理//(还不够理解分布式,似乎目前于我不重要)
  本地仓库 是中心/公共库的完整镜像/克隆,很多功能不必连中心库,如:查看日志,同时开发者拥有全部代码
@@ -11,6 +11,17 @@ GitHub一个面向开源及私有软件项目的托管平台，因为只支持 G
 GitHub&Git使用:
 Git的GUI(视图)界面一般为English,英文水平不够,界面不熟悉,我尝试使用时不直观/不好用;
 目前倾向使用命令行操作;
+自己使用新电脑时命令
+git config --global user.name "bingNotHome" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
+git config --global user.email "1060851898@qq.com" #设置邮箱;每次commit都会记录
+ssh-keygen -t rsa -C "1060851898@qq.com"  #创建ssh密匙,邮箱对应guthub帐号的邮箱,
+#(两次回车键设置文件位置为默认和密码为空)在命令行所在文件夹生成.ssh文件夹;(?为什么根据邮箱生成ssh)
+#.ssh文件夹中有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
+#登陆GitHub，打开“Settings”，“SSH and GPG Keys”页面,(新建一个),将公钥复制进去,title可以随意 "notHome1"
+ssh -T git@github.com  #测试连接github.com:
+#第一次的会提示是否continue，输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access示已成功连上github
+
+详细过程:
 1注册GitHub帐号,创建仓库(远程仓库)作为中心库
 2安装Git(我直接QQ电脑管家)
 git config --global user.name "Your Name" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
