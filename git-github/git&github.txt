@@ -2,7 +2,7 @@
 Git一个开放源码的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
 Git相对SVN多了 本地仓库 ,支持分布式管理//(还不够理解分布式,似乎目前于我不重要)
  本地仓库 是中心/公共库的完整镜像/克隆,很多功能不必连中心库,如:查看日志,同时开发者拥有全部代码
- 本地仓库 主要由暂存区（Stage）和HEAD两部分组成,
+ 本地仓库 主要由暂存区（Stage）和HEAD两部分组成,HEAD不够理解
 提交变动时先add到暂存区（Stage）然后commit到本地仓库当前分支,之后push到中心仓库
 相对SVN操作多一步,先提交到本地仓库,再到中心仓库;
 
@@ -25,19 +25,20 @@ ssh-keygen -t rsa -C "1060851898@qq.com"  #创建ssh密匙,邮箱对应guthub帐
 ssh -T git@github.com  #测试连接github.com:
 #第一次的会提示是否continue，输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access示已成功连上github
 git clone git@github.com:bingpersonal/repositoryBing.git #从github上创建一个克隆版本
-git add *  #添加所有修改 或git add fileName 
+git add *  #添加所有修改 或git add fileName
 git commit -m "提交说明" #git要求提交说明必写
-#增加文件和修改一样,删除不同,删除每次只能删一个文件?
+#删除文件,增加文件和修改一样,删除不同,删除每次只能删一个文件?
 git rm 文件名(包含后缀名) #删除文件
-git commit -m "提交说明" #git要求提交说明必写
+git commit -m "提交说明/信息" #git要求提交说明/信息必写
 #提交后push到中心仓库
 git push
 #其他命令
-#撤销修改:让某个文件回到最近一次git commit或git add时的状态
-git checkout -- "git-github/git&github.txt" #让这个文件回到最近一次git commit或git add时的状态
+#撤销修改:让工作区某个文件回到最近一次git commit或git add时的状态
+git checkout -- "git-github/git&github.txt" #让这个工作区文件回到最近一次git commit或git add时的状态
 #git checkout -- fileName 命令中的"--"很重要，没有"--"，就变成了“切换到另一个分支”的命令
 #撤销add,放弃修改 :执行了add命令而未执行commit命令
-git git reset HEAD fileName #文件回退到当前版本,
+git git reset HEAD fileName #撤销了add命令;取消暂存区变动,工作区文件未回退
+git checkout -- "git-github/git&github.txt" #此时没有了git add的状态,让这个工作区文件回到最近一次git commit,
 
 
 详细过程:
