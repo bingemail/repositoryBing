@@ -1,9 +1,5 @@
 ﻿Git理解:
-<<<<<<< HEAD
-Git一个开源的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
-=======
 Git一个开放源码的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
->>>>>>> e34b0f56dfbcc05fe076f0b5616bd8c12190bb03
 Git相对SVN多了 本地仓库 ,支持分布式管理//(还不够理解分布式,似乎目前于我不重要)
  本地仓库 是中心/公共库的完整镜像/克隆,很多功能不必连中心库,如:查看日志,同时开发者拥有全部代码
  本地仓库 主要由暂存区（Stage）和HEAD两部分组成,HEAD不够理解
@@ -16,11 +12,7 @@ GitHub一个面向开源及私有软件项目的托管平台，因为只支持 G
 
 GitHub&Git使用:
 Git的GUI(视图)界面一般为English,英文水平不够,界面不熟悉,我尝试使用时不直观/不好用;
-<<<<<<< HEAD
-目前倾向学习命令行操作,忽视GUI;
-=======
 目前倾向使用命令行操作;
-
 
 自己使用新电脑时命令
 git config --global user.name "bingNotHome" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
@@ -55,7 +47,6 @@ git reset --hard commit_id  #设置当前版本为commit_id的版本,commit_id�
 
 
 详细过程:
->>>>>>> e34b0f56dfbcc05fe076f0b5616bd8c12190bb03
 1注册GitHub帐号,创建仓库(远程仓库)作为中心库
 2安装Git(我直接QQ电脑管家)
 git config --global user.name "Your Name" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
