@@ -1,7 +1,13 @@
 ﻿Git理解:
+<<<<<<< HEAD
 Git一个开源的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
+=======
+Git一个开放源码的分布式版本控制系统,相对于SVN更倾向于对开源项目的支持;
+>>>>>>> e34b0f56dfbcc05fe076f0b5616bd8c12190bb03
 Git相对SVN多了 本地仓库 ,支持分布式管理//(还不够理解分布式,似乎目前于我不重要)
  本地仓库 是中心/公共库的完整镜像/克隆,很多功能不必连中心库,如:查看日志,同时开发者拥有全部代码
+ 本地仓库 主要由暂存区（Stage）和HEAD两部分组成,HEAD不够理解
+提交变动时先add到暂存区（Stage）然后commit到本地仓库当前分支,之后push到中心仓库
 相对SVN操作多一步,先提交到本地仓库,再到中心仓库;
 
 GitHub理解:
@@ -10,7 +16,46 @@ GitHub一个面向开源及私有软件项目的托管平台，因为只支持 G
 
 GitHub&Git使用:
 Git的GUI(视图)界面一般为English,英文水平不够,界面不熟悉,我尝试使用时不直观/不好用;
+<<<<<<< HEAD
 目前倾向学习命令行操作,忽视GUI;
+=======
+目前倾向使用命令行操作;
+
+
+自己使用新电脑时命令
+git config --global user.name "bingNotHome" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
+git config --global user.email "1060851898@qq.com" #设置邮箱;每次commit都会记录
+ssh-keygen -t rsa -C "1060851898@qq.com"  #创建ssh密匙,邮箱对应guthub帐号的邮箱,
+#(两次回车键设置文件位置为默认和密码为空)在命令行所在文件夹生成.ssh文件夹;(?为什么根据邮箱生成ssh)
+#.ssh文件夹中有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
+#登陆GitHub，打开“Settings”，“SSH and GPG Keys”页面,(新建一个),将公钥复制进去,title可以随意 "notHome1"
+ssh -T git@github.com  #测试连接github.com:
+#第一次的会提示是否continue，输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access示已成功连上github
+git clone git@github.com:bingpersonal/repositoryBing.git #从github上创建一个克隆版本
+git add *  #添加所有修改 或git add fileName
+git commit -m "提交说明" #git要求提交说明必写,不能为空格
+#删除文件,增加文件和修改一样,删除不同,删除每次只能删一个文件? 符号*匹配所有? 待尝试后写明
+git rm fileName(命令行默认包含后缀名) #删除文件
+git commit -m "提交说明/信息" #git要求提交说明/信息必写
+#提交后push到中心仓库
+git push
+#其他命令
+#撤销修改:让工作区某个文件回到最近一次git commit或git add时的状态
+git checkout -- "git-github/git&github.txt" #让这个工作区文件回到最近一次git commit或git add时的状态
+#git checkout -- fileName 命令中的"--"很重要，没有"--"，就变成了“切换到另一个分支”的命令
+#撤销add,放弃修改 :执行了add命令而未执行commit命令
+git git reset HEAD fileName #撤销了add命令;取消暂存区变动,工作区文件未回退
+git checkout -- "git-github/git&github.txt" #此时没有了git add的状态,让这个工作区文件回到最近一次git commit,
+
+git status  #查看状态
+git log  #查看日志
+git reflog #查看 你的每一次commit/pull/clone命令,即每个版本,显示了7位commit_id（版本号）
+git reset --hard commit_id  #设置当前版本为commit_id的版本,commit_id不必输入完整,git会自动匹配
+#HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id
+
+
+详细过程:
+>>>>>>> e34b0f56dfbcc05fe076f0b5616bd8c12190bb03
 1注册GitHub帐号,创建仓库(远程仓库)作为中心库
 2安装Git(我直接QQ电脑管家)
 git config --global user.name "Your Name" #设置用户名--global参数，表示这台机器上所有的Git仓库都会使用这个配置;每次commit都会记录
