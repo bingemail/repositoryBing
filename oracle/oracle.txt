@@ -1,1 +1,6 @@
 oracle 表名不能超过30字符
+
+rowid和rownum都是虚列，但含义完全不同。
+rowid是物理地址，用于定位Oracle中具体数据的物理存储位置，
+而rownum则是sql的输出结果排序。
+通俗的讲：rowid是相对不变的，rownum会变化，尤其是使用order by的时候 
