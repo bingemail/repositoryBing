@@ -1,0 +1,1 @@
+1 与时间相关的值优先使用Date类型,  可以使用java.util.Calendar类对日期处理
