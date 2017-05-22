@@ -1,0 +1,11 @@
+主体功能类似进存销系统;
+小型项目;
+mySql数据库;
+java8 ;
+Eclipse ;
+Html5 页面尽量采用;
+Git  Github ;
+浏览器 暂时倾向(firefox) 只考虑一种浏览器;
+SSM框架 Spring4 SpringMVC myBatis;
+考虑不建实体类,直接Map处理数据,myBatis再考虑;
+maven ;
