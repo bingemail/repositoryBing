@@ -1,0 +1,5 @@
+1 需要jdk支持: java环境变量用jdk路径不用jre路径了
+2 maven配合eclipse使用:在eclipse中设置maven安装路径,setting.xml文件路径
+3 网络问题影响较大,添加jar包并不好用,需要网络环境支持:
+	 jar包搜索网站  http://search.maven.org 移动宽带不好用?
+4 eclipse的maven插件搜索jar包 没成功(移动宽带?)jar包索引更新时间太长强行手动停止
